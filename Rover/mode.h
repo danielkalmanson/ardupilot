@@ -545,6 +545,10 @@ public:
     void limit_init_time_and_location();
     bool limit_breached() const;
 
+    // Guided no gps attempt
+    bool requires_position() const override { return false; }
+    bool requires_velocity() const override { return false; }
+
 protected:
 
     enum class SubMode: uint8_t {
